@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  api:
+    container_name: api
+    build: ./api
+    ports:
+      - 9090:8080
+    volumes:
+      - ./api:/workspace:cached
+
+  web:
+    container_name: web
+    build: ./web
+    ports:
+      - 3000:3000
+    volumes:
+      - ./web:/workspace:cached
+    depends_on:
+      - api
