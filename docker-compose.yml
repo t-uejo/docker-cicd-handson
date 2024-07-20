@@ -5,6 +5,7 @@ services:
     build: ./api
     ports:
       - 9090:8080
+    tty: true
     volumes:
       - ./api:/workspace:cached
 
